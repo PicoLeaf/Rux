@@ -3,7 +3,7 @@ class App extends Component {
         return `
             <link rel="stylesheet" href="style.css">
             <main>
-                
+
                 <h1>Rux sample app</h1>
 
                 <hr>
@@ -15,7 +15,7 @@ class App extends Component {
                 You can find rux <a href="../../rux.min.js">here</a>, and include it using the following script tag:
                 <Snippet code='<script src="path/to/rux.min.js"></script>'></Snippet>
                 Or without using any external file:
-                <Snippet code='<script src=&#039;data,let c=[],f={},d=document,r="refresh",p="deleteProperty",h="html",a="Attribute",Push=(...e)=>setTimeout((t=>(c=[...c,...e]).map((e=>d.querySelectorAll(e.name).forEach((t=>new e(t)))))),0),o=new MutationObserver((e=>e.map((e=>("a"==e.type[0]&&e.target._?.[r](),e.addedNodes.forEach((e=>c.map((t=>t.name.toUpperCase()==e.tagName&&new t(e))))))))));o.observe(d,{attributes:1,childList:1,subtree:1});class Component{states=new Proxy({},{get:(e,t)=>e[t],[p]:(e,t)=>(delete e[t],!this[r]()),set:(e,t,s)=>(e[t]=s,!this[r]())})attributes=new Proxy({},{get:(e,t)=>(t=this[h]["get"+a](t),f[t?.slice(3,-16)]??t),has:(e,t)=>this[h]["has"+a](t),set:(e,t,r)=>(r=this.rux\`${r}\`,!this[h]["set"+a](t,r)),[p]:(e,t)=>!this[h]["remove"+a](t)});constructor(e){e._=this,this[h]=e,this[r]()}[r](){this[h].innerHTML=this.render()}rux=(e,...t)=>t.reduce(((t,r,s)=>t+(r?.bind?(f[btoa(r)]=r.bind(this),\`"f[&amp;#039;\${btoa(r)}\&amp;#039;](...arguments)"\`):r)+e[s+1]),e[0])}&#039;></script>'></Snippet>
+                <Snippet code="<script src=&#34;data:,let c=[],f={},d=document,r='refresh',p='deleteProperty',h='html',a='Attribute',Push=(...e)=>setTimeout((t=>(c=[...c,...e]).map((e=>d.querySelectorAll(e.name).forEach((t=>new e(t)))))),0),o=new MutationObserver((e=>e.map((e=>('a'==e.type[0]&#38;#38;&#38;#38;e.target._?.[r](),e.addedNodes.forEach((e=>c.map((t=>t.name.toUpperCase()==e.tagName&#38;#38;&#38;#38;new t(e))))))))));o.observe(d,{attributes:1,childList:1,subtree:1});class Component{states=new Proxy({},{get:(e,t)=>e[t],[p]:(e,t)=>(delete e[t],!this[r]()),set:(e,t,s)=>(e[t]=s,!this[r]())});attributes=new Proxy({},{get:(e,t)=>(t=this[h]['get'+a](t),f[t?.slice(3,-16)]??t),has:(e,t)=>this[h]['has'+a](t),set:(e,t,s)=>(s=this.rux&#96;\${s}&#38;#96;,!this[h]['set'+a](t,s)),[p]:(e,t)=>!this[h]['remove'+a](t)});constructor(e){e._=this,this[h]=e,this[r]()}[r](){this[h].innerHTML=this.render()}rux=(e,...t)=>t.reduce(((t,s,r)=>t+(s?.bind?(f[btoa(s)]=s.bind(this),&#38;#96;f['\${btoa(s)}'](...arguments)&#38;#96;):s)+e[r+1]),e[0])}&#34;></script>"></Snippet>
                 <br>
 
                 <h3>Rux API</h3>
