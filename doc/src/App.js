@@ -9,7 +9,7 @@ class App extends Component {
                 <hr>
 
                 <h3>What is rux</h3>
-                Rux is a small framework (0.9 KB) that tries to ease the app creation process by helping the developer creating custom html elements.
+                Rux is a small framework (0.9 KB) that lets you add custom html elements.
 
                 <h3>Including rux in your projects</h3>
                 You can find rux <a href="../../rux.min.js">here</a>, and include it using the following script tag:
@@ -20,7 +20,7 @@ class App extends Component {
 
                 <h3>Rux API</h3>
 
-                Rux allows you to write new html tags using javascript, I call them "components".
+                Rux allows you to write new html tags using javascript, so called "components".
                 ${Demonstrate(HelloWorld, " ")}
                 We create a custom component by extending the <kbd>Component</kbd> class, and adding them to rux with <kbd>Push</kbd>.
                 <br>
@@ -29,22 +29,22 @@ class App extends Component {
                 Render is called whenever an attribute or state change for said Component, you can manually trigger a render with <kbd>this.refresh</kbd>
 
                 <h3>Component attributes</h3>
-                You can use <kbd>this.Attribute.YourAttributeName</kbd> to access a attribute of the html attached to that component instance.
+                You can use <kbd>this.attributes.YourAttributeName</kbd> to access a attribute of the html attached to that component instance.
                 ${Demonstrate(Hello, 'user="home!"')}
                 The component is directly re-rendered when the attribute changes.
                 <br>
 
                 <h3>Rux States</h3>
 
-                You can associate a component instance and some states with <kbd>this.states.StateName</kbd>, whenever a state is changed, the component is re-rendered, this can be useful, but that also means the data cannot be changed during <kbd>render</kbd> at the risk of creating an infinite loop
+                You can associate a component instance and some states with <kbd>this.states.StateName</kbd>, whenever a state is changed, the component is re-rendered, that means the data cannot be changed during <kbd>render</kbd> since it creates an infinite loop
                 ${Demonstrate(ClickButton)}
                 Here we use the constructor to instantiate a state, clickCount,
-                then in the render function, we set the onclick attribute to clickEvent, and clickEvent increases the clickCount state
+                then in the render function, we set the onclick attribute to clickEvent.
 
                 <h3>this.rux?</h3>
 
                 As you might have noticed earlier I used a helper function called this.rux,
-                this.rux is a tag template function, if it finds a function, it will bind it to the component, store it and will produce a javascript expression that calls said function.
+                this.rux is a tag template function, transforming js expressions into a small wrapper that calls upon the embeded code.
                 <br>
                 This can be extremely useful with event attributes such as <kbd>onclick</kbd>
 
@@ -58,7 +58,7 @@ class App extends Component {
 
                <h3>Advanced Component</h3>
 
-                You can tweak the inner working of a component by overriding the mount, dismount and refresh function, for example here, Let's implement a component over <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">Shadow DOM feature</a>.
+                You can tweak the inner working of a component by overriding the mount, dismount and refresh function, for example here, Let's implement a component over <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">Shadow DOM</a>.
                 <Snippet code='${ShadowComponent.toString()}\n\n${ShadowHelloWorld.toString()}'></Snippet>
                 When creating a new kind of component you should try creating an API as close as rux's API possible.
 
@@ -66,9 +66,9 @@ class App extends Component {
 
                 You can use the DOM API to create an element with the name of your component.
                 <Snippet code='let element = document.createElement("HelloWorld");\n\ndocument.body.appendChild(element);'></Snippet>
-                If you wish to access the component instance bound to your element, you can do so by looking at the property "component" of your new element,
+                If you wish to access the component instance bound to your element, you can do so by looking at the "_" field of your new element,
                 <br>
-                But you need to use <kbd>setTimeout</kbd> to let rux the time to instantiate the component.
+                Although you do need to use <kbd>setTimeout</kbd> to let rux the time to instantiate the component.
                 <Snippet code='setTimeout(() => {\n\tconsole.log(element._);\n}, 0);'></Snippet>
 
                 <h3>What does rux means?</h3>
