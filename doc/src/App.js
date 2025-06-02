@@ -44,7 +44,7 @@ class App extends Component {
                 <h3>this.rux?</h3>
 
                 As you might have noticed earlier I used a helper function called this.rux,
-                this.rux is a tag template function, transforming js expressions into a small wrapper that calls upon the embeded code.
+                this.rux is a tag template function, transforming js expressions into a small wrapper that calls upon the embedded code.
                 <br>
                 This can be extremely useful with event attributes such as <kbd>onclick</kbd>
 
