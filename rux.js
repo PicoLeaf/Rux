@@ -30,6 +30,6 @@ class Component {
         this[h] = n
         this[r]()
     }
-    [r](){if(this[h])this[h].innerHTML = this.render()}
+    [r](){this[h].innerHTML = this.render()}
     rux=(s, ...e)=> e.reduce((a,e,i)=> a+(e?.bind ? (f[btoa(e)] = e.bind(this), `f['${btoa(e)}'](...arguments)`) : e)+s[i+1], s[0])
 }
